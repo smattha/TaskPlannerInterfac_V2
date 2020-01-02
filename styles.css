@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button:hover {background-color: #e7e7e7;}
+
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: auto;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
+#customers1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: auto;
+}
+
+#customers1 td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
+
+#customers tr:nth-child(even){background-color: #B0BEC5;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #37474F;
+  color: white;
+}
+
+
+#customers1 tr:hover {background-color: #ddd;}
+#customers1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #37474F;
+  color: white;
+}
+
+
+h1 {
+  color: blue;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+
+.one{
+  background-color:#B0BEC5;
+  
+}
+
+.two{
+  background-color:#f2f2f2;
+}
+

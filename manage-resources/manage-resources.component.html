@@ -1,0 +1,40 @@
+
+<md-card id="md-card" align="justified-left">
+
+
+<md-card-content>
+
+<div >
+
+<table id="customers1" >
+   <tr>
+      <th>Name</th>
+      <th>Payload</th>
+      <th>Tool</th>
+      <th>Speed</th>
+	  <th>Location</th>
+	  <th> Availability </th>
+   </tr>
+   <tr  *ngFor="let q of this.resources"  class="{{q.color}}" >
+        <td    >  {{q.name}}      </td>
+        <td   >  {{q.payload}}         </td>
+        <td  > {{q.tool}}  </td>
+        <td   >  {{q.speed}}         </td>
+		<td  > {{q.location}}  </td>
+		<td  >
+		<div *ngIf="q.name" > 
+
+		 <input type="checkbox"  name="q.id" [defaultChecked]="q.availability=='true'" [value]="q.availability=='true'" > <br> 
+		</div>
+		</td>
+    </tr>
+        <!--<app-operation class="question-card" [id]="q.id"> </app-operation> -->
+ </table>
+
+ </div>  
+                 <th align="left" >
+					 <button md-raised-button class="button" (click)="update()">Update</button>
+					 
+                </th>
+ </md-card-content>
+ </md-card>

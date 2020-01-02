@@ -1,0 +1,57 @@
+
+<p>
+
+</p>
+
+
+
+<md-form-field> <input mdInput
+	placeholder="Process Name" [(ngModel)]=" this.name">
+</md-form-field>
+
+ 				<button md-raised-button color="primary" (click)="this.Store()">
+					<md-icon>save</md-icon>
+					Save to the database
+                </button>
+
+
+  <h2>JSON Object </h2>
+  <pre>{{ process.newProcess | json}}</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="demo-content buttondemoBasicUsage">
+    
+<h2> Add Task  
+
+<button md-fab  (click)="this.newTask()">
+     <md-icon class="md-fab">add</md-icon>
+ </button>
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ 
+
+
+
+</h2> 
+
+
+<div *ngFor="let q of this.process.newProcess.tasks">
+        <md-card> <md-card-content>                  
+        
+        <app-edittask class="question-card" [task]="q"> </app-edittask>
+        </md-card-content> </md-card>
+    <br>
+    <br>
+</div>
+
+
+</div>

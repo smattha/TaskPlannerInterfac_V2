@@ -1,0 +1,36 @@
+<md-card id="md-card" align="justified-left">
+    <md-card-content>            
+                <div  *ngIf="ass; else running" >
+                            <table  id="customers1" align="justified-left"  >
+                                    <tr>
+                                        <th>Task</th>
+                                        <th>Operation</th>
+                                        <th>Resource</th>
+                                        <th>Working Area</th>
+                                    </tr>
+
+                                    <tr  *ngFor="let q of ass" class="{{q.color}}" (click)="getAction(q.id)">
+                                        <td>{{q.task}}</td>
+                                        <td>{{ q.operation }}</td>
+                                        <td>{{ q.resource }}</td>
+                                        <td>{{q.workingStation}}</td>
+                                        
+                                    </tr>
+                            </table>                   
+                            <button md-raised-button  (click)="getActions()" >
+                                    Load Actions
+                            </button>
+                </div>
+                        
+                <ng-template #running>
+                        <div align="center" class="loading-overlay" >
+                            <H1>Waiting for results ..... </H1>
+                            <md-icon > schedule</md-icon>
+                        </div>
+                </ng-template>
+                                
+
+    </md-card-content>
+</md-card>    
+
+

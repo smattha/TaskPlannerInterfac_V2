@@ -1,0 +1,102 @@
+<md-form-field align="center" ><input mdInput
+	placeholder="Select a ShopFloor" list="ShopFloorList" [(ngModel)]= "this.shopfloor"  (change)= "onShopFloorShop()" >
+</md-form-field>
+			
+<datalist id="ShopFloorList" >
+    	<div *ngFor="let q of this.ShopFloorList">
+			<option data-value={{q.id}}> {{ q.name }}</option>
+        </div>
+</datalist>
+
+
+<div  ng-controller="ExampleController">
+
+
+<md-card id="md-card" align="justified-left">
+<md-card-content> 
+
+        <div  *ngIf="assLinesData"  >
+                 <table id="customers1" >
+                     <tr>
+                        <th>Assembly  Line</th>
+                        <th>working Station</th>
+                        <th>Working Area</th>
+                     </tr>
+
+                     <tr *ngFor="let q of assLinesData"    (click)="onClickWorkSpace(q)"> 
+                         <td>  {{q.assLineName}}      </td>
+                         <td>  {{q.assemblyStationName}}         </td>
+                         <td>  {{q.workingAreaName}}  </td>
+    
+                     </tr>
+                 </table>
+
+
+            <br> <br> <br>
+
+
+          </div>
+
+            </md-card-content>
+            </md-card>
+
+
+
+ 
+</div>
+
+
+<div  *ngIf="resourcesData" >
+
+<table id="customers1" >
+   <tr>
+      <th>Name</th>
+      <th>Payload</th>
+      <th>Tool</th>
+      <th>Speed</th>
+	  <th>Location</th>
+	  <th> Availability </th>
+   </tr>
+   <tr  *ngFor="let q of this.resourcesData"  class="{{q.color}}" >
+        <td    >  {{q.name}}      </td>
+        <td   >  {{q.payload}}         </td>
+        <td  > {{q.tool}}  </td>
+        <td   >  {{q.speed}}         </td>
+		<td  > {{q.location}}  </td>
+		<td  >
+		<div *ngIf="q.name" > 
+
+		 <input type="checkbox"  name="q.id" [defaultChecked]="q.availability=='true'" [value]="q.availability=='true'" > <br> 
+		</div>
+		</td>
+    </tr>
+        <!--<app-operation class="question-card" [id]="q.id"> </app-operation> -->
+ </table>
+
+ </div>  
+
+
+
+
+
+ <div  *ngIf="partsData" >
+
+<table id="customers1" >
+   <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Weight</th>
+   </tr>
+   <tr  *ngFor="let q of this.partsData"   >
+        <td    >  {{q.name}}      </td>
+        <td   >  {{q.type}}         </td>
+        <td  > {{q.weight}}  </td>
+
+		<td  >
+
+		</td>
+    </tr>
+        <!--<app-operation class="question-card" [id]="q.id"> </app-operation> -->
+ </table>
+
+ </div>  

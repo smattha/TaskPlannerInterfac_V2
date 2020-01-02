@@ -1,0 +1,59 @@
+<datalist id="planList" >
+    	<div *ngFor="let q of this.planList">
+			<option data-value={{q.id}}> {{ q.name }}</option>
+        </div>
+</datalist>
+
+
+<md-form-field align="center" ><input mdInput
+	placeholder="Select Plan" list="planList" [(ngModel)]= "this.plan"  (change)= "onChangePlan()" >
+</md-form-field>
+            
+        
+
+
+<div  *ngIf="processList" >
+
+<md-card *ngIf="!this.viewTask" id="md-card" align="justified-left">
+<md-card-content> 
+       <md-card-title allign="center" > Processes of the selected Plan </md-card-title>
+       <ul>
+
+<table  id="customers" >
+  <tr>
+    <th>Processes</th>
+
+  </tr>
+
+
+    		<tr *ngFor="let q of processList">
+               <td> {{ q.name }}</td>
+
+            </tr>
+            </table> 
+
+      
+			<li>
+				<button md-raised-button class="button" (click)="viewTasks()">				
+					View Tasks 
+				</button> 
+				
+
+            </li>
+        </ul>
+    </md-card-content> 
+</md-card>
+
+
+	   </div>
+	   
+
+	   	 <div *ngIf="this.viewTask" id="div3" flex>
+      <md-card>
+        <md-card-content>
+		
+		  
+		<app-dwm-process-viewtask></app-dwm-process-viewtask>
+        </md-card-content>
+      </md-card>
+    </div>

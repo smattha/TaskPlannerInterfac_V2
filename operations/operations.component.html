@@ -1,0 +1,56 @@
+
+
+
+
+               <button md-raised-button color="" (click)="back()">
+					 back
+                </button>
+
+    <div ng-app="myapp1" ng-controller="cntryController">
+
+</div>
+
+
+    <br>
+    <br>
+            <div  *ngIf="operations" >
+                        <table id="customers" >
+  <tr>
+    <th>Operations</th>
+  </tr>
+			<tr *ngFor="let q of operations">
+
+
+					 {{ q.name }}
+              
+                
+
+            </tr>
+            </table>
+             </div>
+
+
+
+<br>
+<br>   
+<br>
+            <div  *ngIf="operationsNewArray" >
+                
+               
+
+    		<div *ngFor="let q of operationsNewArray">
+            	 <button md-raised-button> 
+				   
+				 				
+                </button>
+
+               <button md-raised-button color="primary" (click)="editOperation(q)">
+					 {{ q.name }}
+                </button>
+
+
+               <br>
+             <br>
+            </div>
+             </div>
+

@@ -1,0 +1,57 @@
+<div  *ngIf="tasks"  >
+    <table id="customers2" >
+          <tr>
+                <th align="left" >
+                     <button md-raised-button class="button" (click)="runPlanner()">Execute HRC task planner</button>
+                </th>
+                <th align="right" >
+                     <button md-raised-button class="button" (click)="this.viewResources() ">View Resources </button>
+                </th>
+         </tr>
+    </table>
+ 
+</div>
+
+<br> <br> 
+
+
+
+
+<div  ng-controller="ExampleController">
+
+
+<md-card id="md-card" align="justified-left">
+<md-card-content> 
+
+        <div  *ngIf="tasks"  >
+                 <table id="customers1" >
+                     <tr>
+                        <th>Process</th>
+                        <th>Tasks</th>
+                        <th>Working Station</th>
+                     </tr>
+
+                     <tr *ngFor="let q of tasks" class="{{q.color}}" >
+                         <td>  {{q.process}}      </td>
+                         <td>  {{q.name}}         </td>
+                         <td>  {{q.workingArea}}  </td>
+    
+                     </tr>
+                 </table>
+
+
+            <br> <br> <br>
+
+
+          </div>
+
+            </md-card-content>
+            </md-card>
+
+            <div *ngIf="flag"  >
+              <app-manage-resources> </app-manage-resources>
+            </div>
+
+ 
+</div>
+

@@ -1,0 +1,12 @@
+div.ext-box {  width:100%;}
+div.int-box { float:left; width: 80% }
+div.int-box2 {float:up; }
+
+
+.selected{
+  background-color:green;
+}
+.bad{
+  background-color:red;
+}
+

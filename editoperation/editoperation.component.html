@@ -1,0 +1,78 @@
+
+<md-card>
+                                                                                                              
+   
+<md-card-content>     
+
+
+<md-form-field> <input mdInput
+    placeholder="Operation name" [(ngModel)]= this.selectedOp.name >
+</md-form-field>
+
+<md-form-field><input mdInput (change)="update()" 
+	placeholder="Operation type" list="type"  [(ngModel)]= this.selectedOp.type >
+</md-form-field>
+
+
+<md-form-field><input mdInput
+	placeholder="Select Tool" list="toolslist" [(ngModel)]= "this.tool"  (change)= "onChangeTool()" >  
+</md-form-field>
+
+
+<md-form-field><input mdInput
+	placeholder="Select Part" list="partsList" [(ngModel)]= "this.part"   (change)= "onChangePart()" >
+</md-form-field>
+            
+<md-form-field><input mdInput
+	placeholder="Select workingAreas" list="workingAreasList" [(ngModel)]= "this.workingArea"  (change)= "onChangeWork()" >
+</md-form-field>
+            
+        
+    <datalist id="toolslist" >
+    		<div *ngFor="let q of this.tools">
+					<option> {{ q.name }}</option>
+             </div>
+    </datalist>
+
+    
+    <datalist id="partsList" >
+            
+			<div *ngFor="let q of this.parts">
+					<option> {{ q.name }}</option>
+             </div>
+ </datalist>
+     <datalist id="workingAreasList" >
+            
+			<div *ngFor="let q of this.workingAreas">
+					<option> {{ q.name }}</option>
+             </div>
+ </datalist>
+
+
+<datalist id="type" >
+            
+			<div *ngFor="let q of this.parts">
+					<option> {{ q.name }}</option>
+
+             </div>
+</datalist>
+
+<br>
+<md-card>
+   
+<md-card-content>    
+            <br>
+			<div *ngFor="let q of this.selectedOp.parameters">
+                 <md-form-field> <input mdInput
+                      placeholder= "{{ q.id }}" [(ngModel)]= "q.value" >
+                </md-form-field>
+                <br>
+                <br>
+            </div>      
+        </md-card-content>     
+</md-card>
+   
+
+		
+	</md-card-content> 
+</md-card>

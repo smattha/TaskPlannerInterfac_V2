@@ -1,0 +1,68 @@
+<md-form-field> <input mdInput
+	placeholder="Product Name" [(ngModel)]=" processSelected.name">
+</md-form-field>
+
+
+ <table id="customers2" >
+  <tr>
+<!--     <th>
+
+<button md-raised-button
+	(click)="complatibleResources(processSelected.id)">Compatibility
+	Resources</button>
+</th>
+
+<th>
+<button md-raised-button (click)="fillTemplates(processSelected.id)">Fill
+	Templates</button>
+</th>
+-->
+
+<th>
+<button md-raised-button class="button" (click)="runPlanner(processSelected.id)">Run
+	Planning</button>
+
+</th>
+
+<th>
+<button md-raised-button class="button" (click)="back()">Back</button>
+
+</th>
+</tr>
+
+<div ng-controller="ExampleController">
+
+<br>
+
+
+
+
+<div *ngIf="tasks"  >
+        <table id="customers" >
+  <tr>
+    <th>Tasks</th>
+  </tr>
+	<tr *ngFor="let q of tasks" class="button" (click)="selectResource(q)" >
+
+        {{q.name}}  
+
+        
+        </tr>
+        
+        <!--<app-operation class="question-card" [id]="q.id"> </app-operation> -->
+
+
+        </table>
+
+
+
+   
+<div *ngIf="this.curTask"  >
+        
+        <app-operation class="question-card" [id]="curTask.id"> </app-operation>
+        </div>
+
+</div>
+
+
+</div>

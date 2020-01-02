@@ -1,0 +1,23 @@
+
+<md-card id="chuck"> 
+	<md-card-content>
+
+		
+	</md-card-content> 
+</md-card>
+<br>
+<br>
+<md-card>
+	<div class="welcome funnyText">
+
+        <div class="button-row">
+		</div>
+
+		<ul>
+            <div  *ngIf="this.processSelected" >
+                <h1>Selected Process </h1>
+				 {{ processSelected.name }}
+             </div>
+		</ul>
+	</div>
+</md-card>

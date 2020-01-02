@@ -1,0 +1,32 @@
+<div ng-app="sandbox" ng-init="visibleDiv='div1'">
+  <div layout="row" flex layout-align="center">
+    <button md-raised-button  (click)="this.change('1')">Factory</button>
+	<button md-raised-button  (click)="this.change('2')">Processes</button>
+	 <button md-raised-button  (click)="this.change('3')">3D Enviroment</button>
+  </div>
+  <section layout="row">
+    <div *ngIf="this.visibleDiv=='1'" flex>
+      <md-card>
+        <md-card-content>
+         <app-factorypage></app-factorypage>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div *ngIf="this.visibleDiv=='2'" id="div2" flex>
+      <md-card>
+        <md-card-content>
+		  <p>Process</p>
+		  <app-dwm-process-page></app-dwm-process-page>
+        </md-card-content>
+      </md-card>
+	</div>
+	
+	<div *ngIf="this.visibleDiv=='3'" id="div3" flex>
+      <md-card>
+        <md-card-content>
+          <p>3d Enviroment</p>
+        </md-card-content>
+      </md-card>
+    </div>
+  </section>
+</div>
